@@ -1,4 +1,4 @@
-CREATE TABLE user_profiles (
+CREATE TABLE social_app.user_profiles (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
     bio TEXT,

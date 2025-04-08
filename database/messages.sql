@@ -1,4 +1,4 @@
-CREATE TABLE messages (
+CREATE TABLE social_app.messages (
     id INT AUTO_INCREMENT PRIMARY KEY,
     sender_id INT NOT NULL,
     receiver_id INT NOT NULL,
