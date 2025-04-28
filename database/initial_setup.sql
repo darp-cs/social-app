@@ -1,9 +1,14 @@
 CREATE SCHEMA IF NOT EXISTS social_app;
 
 
+DROP TABLE IF EXISTS social_app.messages;
+DROP TABLE IF EXISTS social_app.friends;
+DROP TABLE IF EXISTS social_app.friend_requests;  
+DROP TABLE IF EXISTS social_app.user_profiles;
+DROP TABLE IF EXISTS social_app.users;
 -- Users table to store user information
 
-DROP TABLE IF EXISTS social_app.users;
+
 CREATE TABLE social_app.users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL UNIQUE,
@@ -28,7 +33,7 @@ INSERT INTO social_app.users (username, email, password_hash, firstname, lastnam
 ('olivia_hernandez', 'olivia.hernandez@example.com', 'oliviaH2025', 'Olivia', 'Hernandez');
 
 -- User profiles table to store additional user information
-DROP TABLE IF EXISTS social_app.user_profiles;
+
 CREATE TABLE social_app.user_profiles (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
@@ -51,9 +56,9 @@ INSERT INTO social_app.user_profiles (user_id, bio, profile_picture) VALUES
 
 
 -- Need to add a friend request table to manage friend requests and messages associated with them
-DROP TABLE IF EXISTS social_app.friend_requests;   
+ 
 -- Friends table to manage friend relationships
-DROP TABLE IF EXISTS social_app.friends;
+
 CREATE TABLE social_app.friends (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
@@ -76,7 +81,6 @@ INSERT INTO social_app.friends (user_id, friend_id) VALUES
 
 
 -- Messages table to store messages between users
-DROP TABLE IF EXISTS social_app.messages;
 CREATE TABLE social_app.messages (
     id INT AUTO_INCREMENT PRIMARY KEY,
     sender_id INT NOT NULL,
