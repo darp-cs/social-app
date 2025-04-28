@@ -1,1 +1,8 @@
+<<<<<<< Updated upstream
 fastapi[standard]
+=======
+fastapi[standard]
+sqlmodel
+pydantic_settings
+mysqlclient # or pymysql if dont have connector-c installed
+>>>>>>> Stashed changes
