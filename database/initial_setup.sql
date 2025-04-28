@@ -9,21 +9,23 @@ CREATE TABLE social_app.users (
     username VARCHAR(50) NOT NULL UNIQUE,
     email VARCHAR(100) NOT NULL UNIQUE,
     password_hash VARCHAR(255) NOT NULL,
+    firstname VARCHAR(50) NOT NULL,
+    lastname VARCHAR(50) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 
-INSERT INTO social_app.users (username, email, password_hash) VALUES
-('john_doe', 'john.doe@example.com', 'password123'),
-('jane_smith', 'jane.smith@example.com', 'securePass!45'),
-('michael_brown', 'michael.brown@example.com', 'mikeBrown2025'),
-('emily_davis', 'emily.davis@example.com', 'emilyRocks99'),
-('chris_jones', 'chris.jones@example.com', 'chrisPass2025'),
-('sarah_wilson', 'sarah.wilson@example.com', 'wilsonSarah!23'),
-('david_miller', 'david.miller@example.com', 'davidM123'),
-('laura_garcia', 'laura.garcia@example.com', 'lauraG@2025'),
-('james_martinez', 'james.martinez@example.com', 'martinezJames!'),
-('olivia_hernandez', 'olivia.hernandez@example.com', 'oliviaH2025');
+INSERT INTO social_app.users (username, email, password_hash, firstname, lastname) VALUES
+('john_doe', 'john.doe@example.com', 'password123', 'John', 'Doe'),
+('jane_smith', 'jane.smith@example.com', 'securePass!45', 'Jane', 'Smith'),
+('michael_brown', 'michael.brown@example.com', 'mikeBrown2025', 'Michael', 'Brown'),
+('emily_davis', 'emily.davis@example.com', 'emilyRocks99', 'Emily', 'Davis'),
+('chris_jones', 'chris.jones@example.com', 'chrisPass2025', 'Chris', 'Jones'),
+('sarah_wilson', 'sarah.wilson@example.com', 'wilsonSarah!23', 'Sarah', 'Wilson'),
+('david_miller', 'david.miller@example.com', 'davidM123', 'David', 'Miller'),
+('laura_garcia', 'laura.garcia@example.com', 'lauraG@2025', 'Laura', 'Garcia'),
+('james_martinez', 'james.martinez@example.com', 'martinezJames!', 'James', 'Martinez'),
+('olivia_hernandez', 'olivia.hernandez@example.com', 'oliviaH2025', 'Olivia', 'Hernandez');
 
 -- User profiles table to store additional user information
 DROP TABLE IF EXISTS social_app.user_profiles;
