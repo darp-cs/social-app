@@ -1,4 +1,4 @@
-from database import get_db
+from database.db import get_db
 from fastapi import Depends
 from sqlmodel import Session
 from typing import Annotated

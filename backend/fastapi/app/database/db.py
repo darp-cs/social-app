@@ -2,7 +2,7 @@ from sqlmodel import create_engine
 from collections.abc import Generator
 from sqlmodel import Session
 
-from app.config import settings
+from core.config import settings
 
 engine = create_engine(str(settings.MYSQL_DATABASE_URI))
 
