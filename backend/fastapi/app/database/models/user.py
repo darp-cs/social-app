@@ -27,6 +27,10 @@ class UserRegister(SQLModel):
 class UserCreateValidation(UserBase):
     email: str = Field(index=True, nullable=False,max_length=100)
     password: str = Field(nullable=False,max_length=255)
+
+class UserLogin(SQLModel):
+    credential: str = Field(index=True, nullable=False,max_length=50)
+    password: str = Field(nullable=False,max_length=255)
     
 # Fields to be shown to public in addition to user base fields
 class UserPublic(UserBase):
