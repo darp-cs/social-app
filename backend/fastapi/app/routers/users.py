@@ -47,20 +47,7 @@ async def create_user(user: UserRegister, session: SessionDep) -> Any:
     session.refresh(prepared_user)
     return user
 
-@router.post("/login", response_model=User)
-async def login_user(user_in: UserLogin, session: SessionDep) -> Any:
-    """
-    Login a user.
-    """
-    select_user_statement = select(User).where(or_(User.username == user_in.credential,User.email == user_in.credential))
-    result = session.exec(select_user_statement)
-    user = result.first()
-    if not user:
-        return {"error": "User not found"}  
-    if not verify_password(user.password_hash,user_in.password):
-        return {"error": "Invalid password"}
-    # For now return user obkject, later we will return a token associated with  
-    return user
+
     
 
 # TODO: Add delete, only admin and own user can delete their account

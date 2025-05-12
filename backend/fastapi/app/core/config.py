@@ -23,6 +23,8 @@ class Settings(BaseSettings):
     MYSQL_USER: str = "root"
     MYSQL_PASSWORD: str = "password"
     MYSQL_DB: str = "social_app"
+    SECRET_KEY: str = "key"
+    ACCESS_TOKEN_TTL: int = 5 # minutes
 
     @computed_field
     @property
