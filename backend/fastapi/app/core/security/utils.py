@@ -1,4 +1,6 @@
 from AesEverywhere import aes256
+from uuid import uuid4
+
 from database.models.user import UserCreateValidation, User
 from core.config import settings
 
@@ -19,5 +21,6 @@ def verify_password(hashed_password: str, password: str) -> bool:
         return False
     
 def prepare_user(user:UserCreateValidation) -> dict:
-    prepared_user = User.model_validate(user,update={"password_hash": hash_password(user.password)})
+    prepared_user = User.model_validate(user,update={"id": uuid4(),"password_hash": hash_password(user.password)})
     return prepared_user
+    

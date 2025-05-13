@@ -4,6 +4,7 @@ from core.security.utils import prepare_user, verify_password
 from core.dependencies import SessionDep
 from fastapi import APIRouter
 from sqlmodel import select, or_
+from uuid import UUID,uuid4
 from typing import Any
 
 router = APIRouter(
@@ -23,7 +24,7 @@ async def get_users(session: SessionDep) -> Any:
     return UsersPublic(data=users,count=len(users))
 
 @router.get("/{user_id}", response_model=UserPublic)
-async def get_user(user_id: int, session: SessionDep) -> Any:
+async def get_user(user_id: UUID, session: SessionDep) -> Any:
     """
     Get a user by ID.
     """

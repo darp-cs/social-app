@@ -3,3 +3,4 @@ sqlmodel
 pydantic_settings
 mysqlclient # or pymysql if dont have connector-c installed
 aes-everywhere
+pyjwt
